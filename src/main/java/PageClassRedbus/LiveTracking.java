@@ -2,6 +2,7 @@ package PageClassRedbus;
 
 import java.util.List;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -34,6 +35,9 @@ public class LiveTracking extends TestBaseRedBus {
 		
 		operator.click();
 		Thread.sleep(1000);
+		Actions a = new Actions(driver);
+		a.moveToElement(input).click().build().perform();
+		a.sendKeys(input, "Sharma").build().perform();
 		input.sendKeys("sharma");
 		Sharmachbox.click();
 		//chkbox.click();
